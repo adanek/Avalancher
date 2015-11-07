@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #default-configuration
 #logs
 #target
@@ -33,3 +34,15 @@ target
 # Play
 logs
 RUNNING_PID
+=======
+logs
+target
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
+/project/
+/.sbtserver/
+>>>>>>> origin/master
