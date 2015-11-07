@@ -4,6 +4,7 @@
 
 # REST API
 GET        /test         controllers.Application.index()
+GET		   /hotel		 controllers.Application.getHotels()
 
 
 # CLIENT
