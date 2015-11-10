@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import models.SkiArea;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -115,17 +116,23 @@ public class Application extends Controller {
 
 		JSONParser parser = new JSONParser();
 		List<String> result = new LinkedList<>();
-
+        SkiArea skiArea = new SkiArea();
 		try {
 			JSONObject obj = (JSONObject) parser.parse(jsonText);
+
+
 
 			// Object obj2 = parser.parse(obj.get("results").toString());
 			JSONArray array = (JSONArray) obj.get("results");
 			for (int i = 0; i < array.size(); i++) {
 				JSONObject obj1 = (JSONObject) array.get(i);
-				result.add((String) obj1.get("lawinenstufe"));
-				result.add((String) obj1.get("schneehoehe"));
-				result.add((String) obj1.get("neuschnee"));
+//				result.add((String) obj1.get("lawinenstufe"));
+//				result.add((String) obj1.get("schneehoehe"));
+//				result.add((String) obj1.get("neuschnee"));
+                skiArea.name="Kitzbühel";
+                skiArea.avalancherisk = (String)obj1.get("lawinenstufe");
+                skiArea.snowHeight=(String) obj1.get("schneehoehe");
+                skiArea.newSnow= (String)obj1.get("neuschnee");
 			}
 
 		} catch (ParseException pe) {
@@ -137,7 +144,7 @@ public class Application extends Controller {
 		// writer.close();
 		reader.close();
 
-        JsonNode responseData = Json.toJson(result);
+        JsonNode responseData = Json.toJson(skiArea);
         return ok(responseData);
 	}
 
