@@ -1,3 +1,40 @@
+<<<<<<< HEAD
+#default-configuration
+#logs
+#target
+#/.idea
+#/.idea_modules
+#/.classpath
+#/.project
+#/.settings
+#/RUNNING_PID
+
+# general
+*~
+*.log
+tmp
+dump
+
+# Eclipse
+.settings
+.cache
+.project
+.classpath
+.scala_dependencies
+bin
+
+# SBT
+dist
+project/boot
+project/target
+project/plugins/target
+target
+.target
+
+# Play
+logs
+RUNNING_PID
+=======
 logs
 target
 /.idea
@@ -6,3 +43,6 @@ target
 /.project
 /.settings
 /RUNNING_PID
+/project/
+/.sbtserver/
+>>>>>>> origin/master

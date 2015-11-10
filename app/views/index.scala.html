@@ -1,7 +1,11 @@
-@(message: String)
+@(hotels: List[String])
 
 @main("Welcome to Play") {
 
-    <h1>Welcome to Avalauncher! Yeah!</h1>
+    <ul>
+	@for(hotel <- hotels) {
+  		<li>@hotel</li>
+	}
+	</ul>
 
 }
