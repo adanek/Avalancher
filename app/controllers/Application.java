@@ -124,7 +124,8 @@ public class Application extends Controller {
 			for (int i = 0; i < array.size(); i++) {
 				JSONObject obj1 = (JSONObject) array.get(i);
 				result.add((String) obj1.get("lawinenstufe"));
-				System.out.println(obj1.get("lawinenstufe"));
+				result.add((String) obj1.get("schneehoehe"));
+				result.add((String) obj1.get("neuschnee"));
 			}
 
 		} catch (ParseException pe) {
