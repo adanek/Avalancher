@@ -5,14 +5,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
@@ -87,7 +90,9 @@ public class Application extends Controller {
 		// writer.close();
 		reader.close();
 
-		return ok(index.render(result));
+
+		JsonNode responseData = Json.toJson(result);
+		return ok(responseData);
 	}
 
 	public Result getAvalancheRisk() throws IOException {
@@ -110,6 +115,7 @@ public class Application extends Controller {
 
 		JSONParser parser = new JSONParser();
 		List<String> result = new LinkedList<>();
+
 		try {
 			JSONObject obj = (JSONObject) parser.parse(jsonText);
 
@@ -130,7 +136,8 @@ public class Application extends Controller {
 		// writer.close();
 		reader.close();
 
-		return ok(index.render(result));
+        JsonNode responseData = Json.toJson(result);
+        return ok(responseData);
 	}
 
 }
