@@ -5,7 +5,7 @@
 # REST API
 GET        /api/test         controllers.Application.index()
 GET		   /api/hotels/:city		 controllers.HotelController.getHotels(city: String)
-GET		   /api/areas		 controllers.Application.getAvalancheRisk()
+GET		   /api/areas		 controllers.AreaController.getAreas()
 
 
 # CLIENT
