@@ -109,8 +109,8 @@ public class Application extends Controller {
 		// result.add((String) obj1.get("neuschnee"));
 		skiArea.name = "Kitzbühel";
 		skiArea.avalancherisk = (String) obj1.get("lawinenstufe");
-		skiArea.snowHeight = (String) obj1.get("schneehoehe");
-		skiArea.newSnow = (String) obj1.get("neuschnee");
+		//skiArea.snowheight = (String) obj1.get("schneehoehe");
+		//skiArea.freshSnowHeight = (String) obj1.get("neuschnee");
 	    }
 
 	} catch (ParseException pe) {

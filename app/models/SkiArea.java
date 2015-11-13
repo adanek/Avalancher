@@ -5,6 +5,8 @@ public class SkiArea {
     public String name;
     public String city;
     public String avalancherisk;
-    public String snowHeight;
-    public String newSnow;
+    public int snowheight;
+    public int freshSnowHeight;
+    public int openLiftCount;
+    public int liftCount;
 }
