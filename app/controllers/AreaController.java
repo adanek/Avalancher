@@ -44,7 +44,7 @@ public class AreaController extends Controller {
 		areas.add(createArea("Innsbruck Nordkette", "innsbruck-nordkette", "Innsbruck"));
 		areas.add(createArea("Innsbruck-Igls Patscherkofel", "innsbruck-igls-patscherkofel", "Innsbruck Igls"));
 		areas.add(createArea("Kühtai", "kuehtai", "Kühtai"));
-		
+
 	}
 
 	// get ski area data
@@ -66,7 +66,10 @@ public class AreaController extends Controller {
 		List<SkiArea> areas = new ArrayList<>();
 
 		for (int i = 0; i < this.areas.size(); i++) {
-			areas.add(getAreaData(getAreaByName(this.areas.get(i).getName())));
+			SkiArea area = getAreaData(getAreaByName(this.areas.get(i).getName()));
+			if (area != null) {
+				areas.add(area);
+			}
 		}
 
 		JsonNode responseData = Json.toJson(areas);
@@ -196,97 +199,104 @@ public class AreaController extends Controller {
 		connection.setDoOutput(false);
 		connection.setUseCaches(false);
 
-		BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+		SkiArea skiArea;
 
-		String jsonText = "";
-		for (String line; (line = reader.readLine()) != null;) {
-			jsonText = jsonText + line;
-		}
-
-		JSONParser parser = new JSONParser();
-		SkiArea skiArea = new SkiArea();
 		try {
-			JSONObject obj = (JSONObject) parser.parse(jsonText);
-			JSONArray array = (JSONArray) obj.get("results");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-			skiArea.name = area.getName();
-			skiArea.city = area.getCity();
+			String jsonText = "";
+			for (String line; (line = reader.readLine()) != null;) {
+				jsonText = jsonText + line;
+			}
 
-			if (array.size() > 0) {
-				JSONObject obj1 = (JSONObject) array.get(0);
+			JSONParser parser = new JSONParser();
+			skiArea = new SkiArea();
+			try {
+				JSONObject obj = (JSONObject) parser.parse(jsonText);
+				JSONArray array = (JSONArray) obj.get("results");
 
-				for (int i = 1; i <= 15; i++) {
-					String header = (String) obj1.get("header" + i);
-					String data = (String) obj1.get("data" + i);
-					if (header == null || header.equals("") || data == null) {
-						continue;
-					}
-					
-					//avalanche risk
-					if(header.equals("Lawinenwarnstufe")){
-						skiArea.avalancherisk = (String) data;
-					
-					//open lifts
-					} else if (header.equals("Offene Lifte")){
-						
-						String lifte = (String) data;
-						
-						// lift info found?
-						if (lifte != null) {
-							if (lifte.indexOf(" ") > 0) {
-								String offen = lifte.substring(0, lifte.indexOf(" "));
+				skiArea.name = area.getName();
+				skiArea.city = area.getCity();
 
-								if (offen == null || offen.equals("")) {
-									skiArea.openLiftCount = 0;
-								} else {
-									skiArea.openLiftCount = Integer.valueOf(offen);
+				if (array.size() > 0) {
+					JSONObject obj1 = (JSONObject) array.get(0);
+
+					for (int i = 1; i <= 15; i++) {
+						String header = (String) obj1.get("header" + i);
+						String data = (String) obj1.get("data" + i);
+						if (header == null || header.equals("") || data == null) {
+							continue;
+						}
+
+						// avalanche risk
+						if (header.equals("Lawinenwarnstufe")) {
+							skiArea.avalancherisk = (String) data;
+
+							// open lifts
+						} else if (header.equals("Offene Lifte")) {
+
+							String lifte = (String) data;
+
+							// lift info found?
+							if (lifte != null) {
+								if (lifte.indexOf(" ") > 0) {
+									String offen = lifte.substring(0, lifte.indexOf(" "));
+
+									if (offen == null || offen.equals("")) {
+										skiArea.openLiftCount = 0;
+									} else {
+										skiArea.openLiftCount = Integer.valueOf(offen);
+									}
 								}
-							}
-							// Lifte total
-							if (lifte.lastIndexOf(" ") > 0) {
-								String total = lifte.substring(lifte.lastIndexOf(" ") + 1, lifte.length());
+								// Lifte total
+								if (lifte.lastIndexOf(" ") > 0) {
+									String total = lifte.substring(lifte.lastIndexOf(" ") + 1, lifte.length());
 
-								if (total == null || total.equals("")) {
-									skiArea.liftCount = 0;
-								} else {
-									skiArea.liftCount = Integer.valueOf(total);
+									if (total == null || total.equals("")) {
+										skiArea.liftCount = 0;
+									} else {
+										skiArea.liftCount = Integer.valueOf(total);
+									}
 								}
 							}
 						}
 					}
+
+					// snow height
+					String snowHeight = (String) obj1.get("snowheight");
+					if (snowHeight != null) {
+						snowHeight = snowHeight.replaceAll("[^\\d.]", "");
+					}
+					if (snowHeight == null || snowHeight.equals("")) {
+						skiArea.snowheight = 0;
+					} else {
+						skiArea.snowheight = Integer.valueOf(snowHeight);
+					}
+
+					// fresh snow
+					// String freshSnow = (String) obj1.get("neuschnee");
+					// if (freshSnow != null) {
+					// freshSnow = freshSnow.replaceAll("[^\\d.]", "");
+					// }
+					// if (freshSnow == null || freshSnow.equals("")) {
+					// skiArea.freshSnowHeight = 0;
+					// } else {
+					// skiArea.freshSnowHeight = Integer.valueOf(freshSnow);
+					// }
+
 				}
 
-				// snow height
-				String snowHeight = (String) obj1.get("snowheight");
-				if (snowHeight != null) {
-					snowHeight = snowHeight.replaceAll("[^\\d.]", "");
-				}
-				if (snowHeight == null || snowHeight.equals("")) {
-					skiArea.snowheight = 0;
-				} else {
-					skiArea.snowheight = Integer.valueOf(snowHeight);
-				}
+			} catch (ParseException pe) {
 
-				// fresh snow
-				// String freshSnow = (String) obj1.get("neuschnee");
-				// if (freshSnow != null) {
-				// freshSnow = freshSnow.replaceAll("[^\\d.]", "");
-				// }
-				// if (freshSnow == null || freshSnow.equals("")) {
-				// skiArea.freshSnowHeight = 0;
-				// } else {
-				// skiArea.freshSnowHeight = Integer.valueOf(freshSnow);
-				// }
-
+				System.out.println("position: " + pe.getPosition());
+				System.out.println(pe);
 			}
 
-		} catch (ParseException pe) {
+			reader.close();
 
-			System.out.println("position: " + pe.getPosition());
-			System.out.println(pe);
+		} catch (Exception e) {
+			return null;
 		}
-
-		reader.close();
 
 		return skiArea;
 
