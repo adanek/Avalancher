@@ -10,4 +10,5 @@ public class HotelInfo {
     public String price;
     public String url;
     public String image;
+    public String description;
 }
