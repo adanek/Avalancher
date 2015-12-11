@@ -1,0 +1,23 @@
+<header class="page-header text-center">
+    <h1>{{title}}</h1>
+</header>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a [router-link]="['/Home']">Home</a></li>
+            <!--<li><a [router-link]="['/Start']">Start</a></li>-->
+            <li><a [router-link]="['/Areas']">Schigebiete</a></li>
+        </ul>
+    </div>
+
+</nav>
+
+<main class="container">
+    <router-outlet></router-outlet>
+</main>
+
+<footer class="text-center">
+<p><span class="glyphicon glyphicon-education"></span> Brought to you by Team DWD-R</p>
+</footer>
+

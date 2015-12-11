@@ -1,0 +1,21 @@
+<section class="hotel-list">
+    <header class="h2 text-center">Hotels nahe dem Schigebiet {{ area }}</header>
+
+    <div class="hotel-list">
+        <div class="hotel media" *ng-for="#hotel of hotels">
+            <div class="media-left">
+                <a [href]="hotel.url"><img [src]="hotel.image"></a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <span>{{ hotel.name }}</span> <br>
+                    <small>{{ hotel.location }}</small>
+                </h4>
+                <p>{{ hotel.description }}</p>
+                <p>Sterne: {{ hotel.stars }}</p>
+                <p>Bewertung: {{ hotel.ratingDescription }} ({{ hotel.rating }})</p>
+                <a class="btn btn-default" target="_blank"  [href]="hotel.url">Zu den Angeboten</a>
+            </div>
+        </div>
+    </div>
+</section>
