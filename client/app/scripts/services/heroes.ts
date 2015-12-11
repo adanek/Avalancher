@@ -6,7 +6,7 @@ import {Hero} from '../models/hero';
 export class HeroService {
 
     private heroes:Hero[] = [
-        new Hero(11, "Mr. Nice", "Super"),
+        new Hero(11, "Mr. Nicer Dicer", "Super"),
         new Hero(12, "Superman", "Mega"),
         new Hero(13, "Narco", "Dupa"),
         new Hero(14, "Ironman", "Electric")

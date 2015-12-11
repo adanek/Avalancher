@@ -40,3 +40,13 @@
 .ng-invalid {
     border-left: 5px solid #a94442;
 }
+
+.ski-area {
+    padding-bottom: 1em;
+    border-bottom: 1px solid darkgrey;
+}
+
+.media-object {
+    width: 64px;
+    margin-bottom: 1em;
+}

@@ -1,3 +1,18 @@
-<div *ng-for="#area of areas">
- {{ area.name }}
+<div class="area-list">
+    <div class="ski-area media" *ng-for="#area of areas">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="/app/images/ski-area.png" alt="Logo des Schi Gebiets">
+            </a>
+            <a href="#">
+                <img class="media-object" [src]="getAvalancheRiskIcon(area.avalancherisk)" alt="Logo des Schi Gebiets">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{ area.name }} <small>Ort:&nbsp;{{area.city}}</small></h4>
+            <p>Schneehöhe: {{area.snowheight}} ({{area.freshSnowHeight}} cm Neuschnee)</p>
+            <p>Offene Lifte: {{area.openLiftCount}} von {{area.liftCount}}</p>
+            <a class="btn btn-default" [router-link]="['/Hotels', {'area': area.name}]">Hotels</a>
+        </div>
+    </div>
 </div>

@@ -1,25 +1,23 @@
-<h1>{{title}}</h1>
+<header class="page-header text-center">
+    <h1>{{title}}</h1>
+</header>
 
-<h2>My Heroes</h2>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a [router-link]="['/Home']">Home</a></li>
+            <!--<li><a [router-link]="['/Start']">Start</a></li>-->
+            <li><a [router-link]="['/Areas']">Schigebiete</a></li>
+        </ul>
+    </div>
 
-<div>
-    <input #new-hero
-           (keyup.enter)="addHero(newHero)"
-           (blur)="addHero(newHero)">
-    <button (click)="addHero(newHero)">Add</button>
-</div>
+</nav>
 
-<ul class="heroes">
-    <li *ng-for="#hero of heroes"
-        (click)="onSelect(hero)"
-        [ng-class]="getSelectedClass(hero)">
-        <span class="badge">{{hero.id}}</span>{{hero.name}}
-    </li>
-</ul>
+<main class="container">
+    <router-outlet></router-outlet>
+</main>
 
-<hero-form
-        *ng-if="selectedHero"
-        [(hero)]="selectedHero">
-</hero-form>
+<footer>
 
-<ski-areas>loading</ski-areas>
+</footer>
+

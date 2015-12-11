@@ -1,21 +1,24 @@
 <html>
 <head>
-    <title>Angular 2 Quickstart</title>
+    <title>Avalauncher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
     <link href="styles/main.css" rel="stylesheet"/>
 </head>
 <body>
-<my-app>loading...</my-app>
+
+<avalauncher-app>loading...</avalauncher-app>
 
 <section class="scripts">
-    <script src="../node_modules/systemjs/dist/system.src.js"></script>
-    <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="../node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/http.dev.js"></script>
     <script>
         System.config({
             packages: {'scripts': {defaultExtension: 'js'}}
         });
-        System.import('scripts/app');
+        System.import('/app/scripts/app');
     </script>
 </section>
 
