@@ -13,6 +13,7 @@
 # general
 *~
 *.log
+/client/node_modules
 tmp
 dump
 

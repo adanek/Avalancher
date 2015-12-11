@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Angular 2 Quickstart</title>
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="styles/main.css" rel="stylesheet"/>
+</head>
+<body>
+<my-app>loading...</my-app>
+
+<section class="scripts">
+    <script src="../node_modules/systemjs/dist/system.src.js"></script>
+    <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="../node_modules/angular2/bundles/http.dev.js"></script>
+    <script>
+        System.config({
+            packages: {'scripts': {defaultExtension: 'js'}}
+        });
+        System.import('scripts/app');
+    </script>
+</section>
+
+</body>
+</html>

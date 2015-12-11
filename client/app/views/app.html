@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+
+<h2>My Heroes</h2>
+
+<div>
+    <input #new-hero
+           (keyup.enter)="addHero(newHero)"
+           (blur)="addHero(newHero)">
+    <button (click)="addHero(newHero)">Add</button>
+</div>
+
+<ul class="heroes">
+    <li *ng-for="#hero of heroes"
+        (click)="onSelect(hero)"
+        [ng-class]="getSelectedClass(hero)">
+        <span class="badge">{{hero.id}}</span>{{hero.name}}
+    </li>
+</ul>
+
+<hero-form
+        *ng-if="selectedHero"
+        [(hero)]="selectedHero">
+</hero-form>
+
+<ski-areas>loading</ski-areas>
