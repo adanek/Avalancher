@@ -38,12 +38,14 @@ public class AreaController extends Controller {
 	public AreaController() {
 
 		// add relevant ski area data
-		areas.add(createArea("Kitzbühel-Kirchberg", "kitzbuehel-kirchberg", "Kitzbühel"));
+		areas.add(createArea("Kitzbuehel-Kirchberg", "kitzbuehel-kirchberg", "Kitzbuehel"));
 		areas.add(createArea("Glungezer", "glungezer", "Tulfes"));
 		areas.add(createArea("Pitztaler Gletscher", "pitztalergletscher", "Pitztal"));
 		areas.add(createArea("Innsbruck Nordkette", "innsbruck-nordkette", "Innsbruck"));
 		areas.add(createArea("Innsbruck-Igls Patscherkofel", "innsbruck-igls-patscherkofel", "Innsbruck Igls"));
-		areas.add(createArea("Kühtai", "kuehtai", "Kühtai"));
+		areas.add(createArea("Kuehtai", "kuehtai", "Kuehtai"));
+		areas.add(createArea("Axamer Lizum", "axamer-lizum", "Axams"));
+		areas.add(createArea("Seefeld Rosshuette", "seefeld-rosshuette", "Seefeld"));
 
 	}
 
