@@ -46,7 +46,9 @@ public class AreaController extends Controller {
 		areas.add(createArea("Kuehtai", "kuehtai", "Kuehtai"));
 		areas.add(createArea("Axamer Lizum", "axamer-lizum", "Axams"));
 		areas.add(createArea("Seefeld Rosshuette", "seefeld-rosshuette", "Seefeld"));
-
+		areas.add(createArea("Stubaier Gletscher", "stubaier-gletscher", "Neustift"));
+		
+		
 	}
 
 	// get ski area data
