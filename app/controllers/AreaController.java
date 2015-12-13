@@ -44,6 +44,8 @@ public class AreaController extends Controller {
 		areas.add(createArea("Innsbruck Nordkette", "innsbruck-nordkette", "Innsbruck"));
 		areas.add(createArea("Innsbruck-Igls Patscherkofel", "innsbruck-igls-patscherkofel", "Innsbruck Igls"));
 		areas.add(createArea("Kuehtai", "kuehtai", "Kuehtai"));
+		areas.add(createArea("Axamer Lizum", "axamer-lizum", "Axams"));
+		areas.add(createArea("Seefeld Rosshuette", "seefeld-rosshuette", "Seefeld"));
 
 	}
 
