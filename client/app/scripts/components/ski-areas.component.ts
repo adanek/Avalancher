@@ -37,11 +37,11 @@ export class SkiAreasComponent {
             case 'II - mäßig Lawinenwarndienst':
                 src= src + '2_standard.jpg';
                 break;
-            case 'III - hoch Lawinenwarndienst':
+            case 'III - erheblich Lawinenwarndienst':
                 src = src + '3_standard.jpg';
                 break;
-            case 'IV - Lawinenwarndienst':
-            case 'V - Lawinenwarndienst':
+            case 'IV - groß Lawinenwarndienst':
+            case 'V - sehr groß Lawinenwarndienst':
                 src = src + '4_5_standard.jpg';
                 break;
 
