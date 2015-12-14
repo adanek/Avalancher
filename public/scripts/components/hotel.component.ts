@@ -21,7 +21,7 @@ export class HotelComponent{
     }
 
     public getImageSrc(hotel:Hotel){
-        return hotel.image === "null" ? 'images/no_image.png' : hotel.image;
+        return hotel.image === null ? 'images/no_image.png' : hotel.image;
     }
 
 }

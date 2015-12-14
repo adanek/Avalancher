@@ -41,6 +41,7 @@ RUNNING_PID
 logs
 target
 /.idea
+client/.idea/
 /.idea_modules
 /.classpath
 /.project
