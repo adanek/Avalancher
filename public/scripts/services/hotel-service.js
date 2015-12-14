@@ -1,8 +1,10 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
+    switch (arguments.length) {
+        case 2: return decorators.reduceRight(function(o, d) { return (d && d(o)) || o; }, target);
+        case 3: return decorators.reduceRight(function(o, d) { return (d && d(target, key)), void 0; }, void 0);
+        case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
+    }
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
@@ -41,7 +43,7 @@ var HotelService = (function () {
                 "ratingDescription": "Sehr gut",
                 "price": "$$$$$",
                 "url": "http://www.booking.com//hotel/at/htelgrauerbaerinnsbr.de.html?label=gen173nr-15CAEoggJCAlhYSDNiBW5vcmVmaA6IAQGYAQe4AQTIAQTYAQPoAQE;sid=5d6d791d0a50fb103436f71c728c9216;dcid=1;ucfs=1;room1=A,A;srfid=ed7db36c1c118bbf9dc67cbb056ce869d2c47494X3;highlight_room=",
-                "image": "http://r-ec.bstatic.com/images/hotel/square200/880/8800186.jpg",
+                "image": "null",
                 "description": "Im Herzen von Innsbruck begrüßt Sie das Hotel Grauer Bär, nur 2 Gehminuten von der historischen Altstadt entfernt."
             }, {
                 "name": "Hilton Innsbruck",

@@ -49,7 +49,7 @@ export class AreaService {
         }, {
             "name": "Kühtai",
             "city": "Kühtai",
-            "avalancherisk": "keine Meldung Lawinenwarndienst",
+            "avalancherisk": "II - mäßig Lawinenwarndienst",
             "snowheight": 15,
             "freshSnowHeight": 0,
             "openLiftCount": 5,

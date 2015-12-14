@@ -34,7 +34,7 @@ export class HotelService {
             "ratingDescription": "Sehr gut",
             "price": "$$$$$",
             "url": "http://www.booking.com//hotel/at/htelgrauerbaerinnsbr.de.html?label=gen173nr-15CAEoggJCAlhYSDNiBW5vcmVmaA6IAQGYAQe4AQTIAQTYAQPoAQE;sid=5d6d791d0a50fb103436f71c728c9216;dcid=1;ucfs=1;room1=A,A;srfid=ed7db36c1c118bbf9dc67cbb056ce869d2c47494X3;highlight_room=",
-            "image": "http://r-ec.bstatic.com/images/hotel/square200/880/8800186.jpg",
+            "image": "null",
             "description": "Im Herzen von Innsbruck begrüßt Sie das Hotel Grauer Bär, nur 2 Gehminuten von der historischen Altstadt entfernt."
         }, {
             "name": "Hilton Innsbruck",
