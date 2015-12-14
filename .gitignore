@@ -23,6 +23,7 @@
 /client/app/scripts/services/*.js.map
 /client/app/scripts/models/*.js
 /client/app/scripts/models/*.js.map
+/untitled
 
 /client/node_modules
 tmp
