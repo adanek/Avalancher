@@ -4,7 +4,7 @@
     <div class="hotel-list">
         <div class="hotel media" *ng-for="#hotel of hotels">
             <div class="media-left">
-                <a [href]="hotel.url"><img [src]="hotel.image"></a>
+                <a [href]="hotel.url"><img [src]="getImageSrc(hotel)" class="media-object hotel-image"></a>
             </div>
             <div class="media-body">
                 <h4 class="media-heading">

@@ -51,6 +51,10 @@
     margin-bottom: 1em;
 }
 
+.media-object.hotel-image {
+    width: 200px;
+}
+
 @media screen and (max-width: 550px) {
     .media-left {
         display: block;
