@@ -14,6 +14,16 @@
 # general
 *~
 *.log
+
+/client/app/scripts/app.js
+/client/app/scripts/app.js.map
+/client/app/scripts/components/*.js
+/client/app/scripts/components/*.js.map
+/client/app/scripts/services/*.js
+/client/app/scripts/services/*.js.map
+/client/app/scripts/models/*.js
+/client/app/scripts/models/*.js.map
+
 /client/node_modules
 tmp
 dump
