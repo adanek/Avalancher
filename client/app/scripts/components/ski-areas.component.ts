@@ -34,9 +34,20 @@ export class SkiAreasComponent {
             case 'I - gering Lawinenwarndienst':
                 src = src + '1_standard.jpg';
                 break;
-            case 'keine Meldung Lawinenwarndienst':
-                src = src + 'no_rating_standard.jpg'
+            case 'II - mäßig Lawinenwarndienst':
+                src= src + '2_standard.jpg';
                 break;
+            case 'III - hoch Lawinenwarndienst':
+                src = src + '3_standard.jpg';
+                break;
+            case 'IV - Lawinenwarndienst':
+            case 'V - Lawinenwarndienst':
+                src = src + '4_5_standard.jpg';
+                break;
+
+            case 'keine Meldung Lawinenwarndienst':
+            default:
+                src = src + 'no_rating_standard.jpg';
         }
 
         return src;
