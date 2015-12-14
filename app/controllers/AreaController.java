@@ -44,8 +44,8 @@ public class AreaController extends Controller {
 
     	Callable<JsonNode> areaCall = new AreaService();
     	//cache for 15 minutes (60*15)
-    	JsonNode responseData = cache.getOrElse("areas", areaCall, (60*15));
-    	//JsonNode responseData = cache.getOrElse(null, areaCall, 1);
+    	//JsonNode responseData = cache.getOrElse("areas", areaCall, (60*15));
+    	JsonNode responseData = cache.getOrElse("areas", areaCall, 1);
 	return ok(responseData);
 
 	}
