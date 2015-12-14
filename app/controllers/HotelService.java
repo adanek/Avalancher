@@ -24,14 +24,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 public class HotelService implements Callable<JsonNode> {
 
 	private String city;
-	
-	public HotelService(String city){
+
+	public HotelService(String city) {
 		this.city = city;
 	}
-	
+
 	@Override
 	public JsonNode call() throws Exception {
-		
+
 		URL url = getURL(city);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("GET");
@@ -107,6 +107,12 @@ public class HotelService implements Callable<JsonNode> {
 			break;
 		case "Kuehtai":
 			url = "https://api.import.io/store/connector/11910efc-2162-449e-bc33-e4a72c02a590/_query?input=webpage/url:http%3A%2F%2Fwww.booking.com%2Fsearchresults.de.html%3Fsrc%3Dindex%26nflt%3D%26error_url%3Dhttp%253A%252F%252Fwww.booking.com%252Findex.de.html%253Flabel%253Dgen173bo-15CAEoggJCAlhYSDNYA2gOiAEBmAEHuAEEyAEE2AED6AEBmAIC%253Bsid%253D4fac978bef28eab2213548375c6753e8%253Bdcid%253D4%253Bbb_ltbi%253D0%253Bsb_price_type%253Dtotal%2526%253B%26dcid%3D4%26label%3Dgen173bo-15CAEoggJCAlhYSDNYA2gOiAEBmAEHuAEEyAEE2AED6AEBmAIC%26sid%3D4fac978bef28eab2213548375c6753e8%26si%3Dai%252Cco%252Cci%252Cre%252Cdi%26ss%3DK%25C3%25BChtai%252C%2BTirol%252C%2B%25C3%2596sterreich%26room1%3DA%252CA%26no_rooms%3D1%26group_adults%3D2%26group_children%3D0%26ac_pageview_id%3Dcb6e741cb9890108%26ss_raw%3DK%25C3%25BChtai%26dest_id%3D-1983428%26dest_type%3Dcity%26ac_position%3D0%26ac_langcode%3Dde%26ac_suggestion_list_length%3D5&&_apikey=1dbdc05e38134478bc009e49135be330fca7a71e7ee46bc515674cfeb0eb50ba15d9b37e0b020e7580239f665577b6926134b5afcd98de12b09aaf4130bee7fc59700445a5c65420972c184285ed9e45";
+			break;
+		case "Neustift":
+			url = "https://api.import.io/store/connector/c5035b83-c32b-4dcc-bf2f-12156704afba/_query?input=webpage/url:http%3A%2F%2Fwww.booking.com%2Fsearchresults.de.html%3Fsrc%3Dindex%26nflt%3D%26error_url%3Dhttp%253A%252F%252Fwww.booking.com%252Findex.de.html%253Flabel%253Dgen173bo-15CAEoggJCAlhYSDNYA2gOiAEBmAEHuAEEyAEE2AED6AEBmAIC%253Bsid%253D4fac978bef28eab2213548375c6753e8%253Bdcid%253D4%253Bbb_ltbi%253D0%253Bsb_price_type%253Dtotal%2526%253B%26dcid%3D4%26label%3Dgen173bo-15CAEoggJCAlhYSDNYA2gOiAEBmAEHuAEEyAEE2AED6AEBmAIC%26sid%3D4fac978bef28eab2213548375c6753e8%26si%3Dai%252Cco%252Cci%252Cre%252Cdi%26ss%3DNeustift%2Bim%2BStubaital%252C%2BTirol%252C%2B%25C3%2596sterreich%26room1%3DA%252CA%26no_rooms%3D1%26group_adults%3D2%26group_children%3D0%26ac_pageview_id%3D669f4645a89b036a%26ss_raw%3DNeustif%26dest_id%3D-1986096%26dest_type%3Dcity%26ac_position%3D0%26ac_langcode%3Dde%26ac_suggestion_list_length%3D5&&_apikey=1dbdc05e38134478bc009e49135be330fca7a71e7ee46bc515674cfeb0eb50ba15d9b37e0b020e7580239f665577b6926134b5afcd98de12b09aaf4130bee7fc59700445a5c65420972c184285ed9e45";
+			break;
+		case "Innsbruck Igls":
+			url = "https://api.import.io/store/connector/a3b67796-9508-4e9c-9a9f-ae2db733fee7/_query?input=webpage/url:http%3A%2F%2Fwww.booking.com%2Fsearchresults.de.html%3Fsrc%3Dindex%26nflt%3D%26error_url%3Dhttp%253A%252F%252Fwww.booking.com%252Findex.de.html%253Flabel%253Dgen173bo-15CAEoggJCAlhYSDNYA2gOiAEBmAEHuAEEyAEE2AED6AEBmAIC%253Bsid%253D4fac978bef28eab2213548375c6753e8%253Bdcid%253D4%253Bbb_ltbi%253D0%253Bsb_price_type%253Dtotal%2526%253B%26dcid%3D4%26label%3Dgen173bo-15CAEoggJCAlhYSDNYA2gOiAEBmAEHuAEEyAEE2AED6AEBmAIC%26sid%3D4fac978bef28eab2213548375c6753e8%26si%3Dai%252Cco%252Cci%252Cre%252Cdi%26ss%3DPatscherkofelbahn%2B1%252C%2BInnsbruck%252C%2BTirol%252C%2B%25C3%2596sterreich%26room1%3DA%252CA%26no_rooms%3D1%26group_adults%3D2%26group_children%3D0%26ac_pageview_id%3D826c49c9d9150294%26ss_raw%3Dpatscherko%26dest_id%3D251586%26dest_type%3Dlandmark%26ac_position%3D0%26ac_langcode%3Dde%26ac_suggestion_list_length%3D2&&_apikey=1dbdc05e38134478bc009e49135be330fca7a71e7ee46bc515674cfeb0eb50ba15d9b37e0b020e7580239f665577b6926134b5afcd98de12b09aaf4130bee7fc59700445a5c65420972c184285ed9e45";
 			break;
 		}
 		try {

@@ -36,8 +36,8 @@ public class HotelController extends Controller {
 
     public Result getHotels(String city) throws IOException {
     	Callable<JsonNode> hotelCall = new HotelService(city);
-    	//cache for 15 minutes
-    	JsonNode responseData = cache.getOrElse(city, hotelCall, 60 * 15);
+    	//cache for 15 minutes (60*15)
+    	JsonNode responseData = cache.getOrElse(city, hotelCall, 1);
 	return ok(responseData);
     }
 }
