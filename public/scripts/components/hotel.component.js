@@ -18,6 +18,9 @@ var HotelComponent = (function () {
         this.area = params.get('area');
         hotelService.getHotelsFormArea(this.area).then(function (receivedHotels) { return _this.hotels = receivedHotels; });
     }
+    HotelComponent.prototype.getImageSrc = function (hotel) {
+        return hotel.image === null ? 'images/no_image.png' : hotel.image;
+    };
     HotelComponent = __decorate([
         angular2_1.Component({
             selector: 'hotels',

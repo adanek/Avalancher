@@ -20,4 +20,8 @@ export class HotelComponent{
         hotelService.getHotelsFormArea(this.area).then(receivedHotels => this.hotels = receivedHotels);
     }
 
+    public getImageSrc(hotel:Hotel){
+        return hotel.image === null ? 'images/no_image.png' : hotel.image;
+    }
+
 }
