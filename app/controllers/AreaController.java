@@ -43,9 +43,8 @@ public class AreaController extends Controller {
 	public Result getAreas() throws IOException {
 
     	Callable<JsonNode> areaCall = new AreaService();
-    	//cache for 15 minutes (60*15)
-    	//JsonNode responseData = cache.getOrElse("areas", areaCall, (60*15));
-    	JsonNode responseData = cache.getOrElse("areas", areaCall, 1);
+    	//cache for 12 hours
+    	JsonNode responseData = cache.getOrElse("areas", areaCall, (60*60*12));
 	return ok(responseData);
 
 	}
