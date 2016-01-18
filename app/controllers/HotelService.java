@@ -31,54 +31,66 @@ public class HotelService implements Callable<JsonNode> {
 
 	@Override
 	public JsonNode call() throws Exception {
-
-		URL url = getURL(city);
-		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-		connection.setRequestMethod("GET");
-		connection.setRequestProperty("Accept", "application/json");
-		connection.setDoInput(true);
-		connection.setDoOutput(false);
-		connection.setUseCaches(false);
-
-		BufferedReader reader = new BufferedReader(new InputStreamReader(
-				connection.getInputStream()));
-
-		String jsonText = "";
-		for (String line; (line = reader.readLine()) != null;) {
-			jsonText = jsonText + line;
-		}
-
-		JSONParser parser = new JSONParser();
-		List<String> result = new LinkedList<>();
+		boolean flag = false;
 		List<HotelInfo> hotels = new ArrayList<>();
-		try {
-			JSONObject obj = (JSONObject) parser.parse(jsonText);
-			JSONArray jsonAllHotels = (JSONArray) obj.get("results");
-			for (int i = 0; i < jsonAllHotels.size(); i++) {
-				JSONObject jsonHotel = (JSONObject) jsonAllHotels.get(i);
-				HotelInfo hotel = new HotelInfo();
-				hotel.name = (String) jsonHotel.get("name");
-				hotel.location = (String) jsonHotel.get("city");
-				hotel.stars = (String) jsonHotel.get("stars");
-				hotel.rating = (String) jsonHotel.get("rating");
-				hotel.ratingDescription = (String) jsonHotel
-						.get("rating_description");
-				hotel.price = (String) jsonHotel.get("price");
-				hotel.image = (String) jsonHotel.get("picture_link");
-				hotel.url = "http://www.booking.com/";
-				hotel.url = hotel.url + (String) jsonHotel.get("link/_source");
-				hotel.description = (String) jsonHotel.get("description");
+		BufferedReader reader = null;
+		while(flag == false){
+			try {
+				flag = true;
+				hotels.clear();
+				URL url = getURL(city);
+				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				connection.setRequestMethod("GET");
+				connection.setRequestProperty("Accept", "application/json");
+				connection.setDoInput(true);
+				connection.setDoOutput(false);
+				connection.setUseCaches(false);
+	
+				reader = new BufferedReader(new InputStreamReader(
+						connection.getInputStream()));
+	
+				String jsonText = "";
+				for (String line; (line = reader.readLine()) != null;) {
+					jsonText = jsonText + line;
+				}
 
-				hotels.add(hotel);
+				JSONParser parser = new JSONParser();
+				JSONObject obj = (JSONObject) parser.parse(jsonText);
+				JSONArray jsonAllHotels = (JSONArray) obj.get("results");
+				for (int i = 0; i < jsonAllHotels.size(); i++) {
+					JSONObject jsonHotel = (JSONObject) jsonAllHotels.get(i);
+					HotelInfo hotel = new HotelInfo();
+					hotel.name = (String) jsonHotel.get("name");
+					hotel.location = (String) jsonHotel.get("city");
+					hotel.stars = (String) jsonHotel.get("stars");
+					hotel.rating = (String) jsonHotel.get("rating");
+					hotel.ratingDescription = (String) jsonHotel
+							.get("rating_description");
+					hotel.price = (String) jsonHotel.get("price");
+					hotel.image = (String) jsonHotel.get("picture_link");
+					hotel.url = "http://www.booking.com/";
+					hotel.url = hotel.url + (String) jsonHotel.get("link/_source");
+					hotel.description = (String) jsonHotel.get("description");
+
+					if(hotel.image != null){
+						if(hotel.image.contains("static/img/transparent")){ 
+							System.out.println(hotel.image);
+							System.out.println("continue");
+							flag = false;
+							break;
+						}
+					}
+					hotels.add(hotel);
+				}
+
+			} catch (Exception ex) {
+
+				System.out.println(ex);
+				flag = false;
+			} finally {
+				reader.close();
 			}
-
-		} catch (ParseException pe) {
-
-			System.out.println("position: " + pe.getPosition());
-			System.out.println(pe);
 		}
-
-		reader.close();
 
 		JsonNode responseData = Json.toJson(hotels);
 		return responseData;
