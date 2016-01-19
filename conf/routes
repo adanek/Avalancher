@@ -6,7 +6,7 @@
 GET        /api/test         controllers.Application.index()
 GET		   /api/hotels/:city		 controllers.HotelController.getHotels(city: String)
 GET		   /api/areas		 controllers.AreaController.getAreas()
-
+GET        /api/riskreport   controllers.RiskController.getRiskReport()
 
 # CLIENT
 GET        /             controllers.Static.htmlFromFile(file = "public/index.html")
