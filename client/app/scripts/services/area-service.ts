@@ -23,14 +23,14 @@ export class AreaService {
         }, {
             "name": "Pitztaler Gletscher",
             "city": "Pitztal",
-            "avalancherisk": "keine Meldung Lawinenwarndienst",
+            "avalancherisk": "IV - groß Lawinenwarndienst",
             "snowheight": 128,
             "openLiftCount": 6,
             "liftCount": 6
         }, {
             "name": "Innsbruck Nordkette",
             "city": "Innsbruck",
-            "avalancherisk": "keine Meldung Lawinenwarndienst",
+            "avalancherisk": "III - erheblich Lawinenwarndienst",
             "snowheight": 10,
             "openLiftCount": 0,
             "liftCount": 2
