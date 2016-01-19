@@ -7,7 +7,7 @@ import {SkiArea} from "../models/ski-area";
 @Component({
     selector: 'ski-areas',
     templateUrl: 'views/ski-areas.component.html',
-    directives: [CORE_DIRECTIVES]
+    directives: [CORE_DIRECTIVES, RouterLink]
 })
 export class SkiAreasComponent {
 

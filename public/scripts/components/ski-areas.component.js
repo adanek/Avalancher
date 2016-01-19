@@ -59,7 +59,7 @@ var SkiAreasComponent = (function () {
         angular2_1.Component({
             selector: 'ski-areas',
             templateUrl: 'views/ski-areas.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES]
+            directives: [angular2_1.CORE_DIRECTIVES, router_1.RouterLink]
         }), 
         __metadata('design:paramtypes', [area_service_1.AreaService, router_1.Location])
     ], SkiAreasComponent);
