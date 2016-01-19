@@ -10,7 +10,7 @@
         </div>
         <div class="media-body">
             <h4 class="media-heading">{{ area.name }} <small>Ort:&nbsp;{{area.city}}</small></h4>
-            <p>Schneehöhe: {{area.snowheight}} ({{area.freshSnowHeight}} cm Neuschnee)</p>
+            <p>Schneehöhe: {{area.snowheight}}</p>
             <p>Offene Lifte: {{area.openLiftCount}} von {{area.liftCount}}</p>
             <a class="btn btn-default" [router-link]="['/Hotels', {'area': area.city}]">Hotels</a>
         </div>
