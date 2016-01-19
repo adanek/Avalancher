@@ -3,10 +3,11 @@ import {Location, RouterLink} from 'angular2/router';
 import {AreaService} from "../services/area-service";
 import {SkiArea} from "../models/ski-area";
 
+
 @Component({
     selector: 'ski-areas',
     templateUrl: 'views/ski-areas.component.html',
-    directives: [CORE_DIRECTIVES, RouterLink]
+    directives: [CORE_DIRECTIVES]
 })
 export class SkiAreasComponent {
 

@@ -3,7 +3,6 @@ export class SkiArea{
     public city: string;
     public avalancherisk: string;
     public snowheight: number;
-    public freshSnowHeight: number;
     public openLiftCount: number;
     public liftCount: number;
 }
