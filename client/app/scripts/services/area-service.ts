@@ -11,7 +11,6 @@ export class AreaService {
             "city": "Kitzbühel",
             "avalancherisk": "I - gering Lawinenwarndienst",
             "snowheight": 44,
-            "freshSnowHeight": 0,
             "openLiftCount": 20,
             "liftCount": 58
         }, {
@@ -19,7 +18,6 @@ export class AreaService {
             "city": "Tulfes",
             "avalancherisk": "keine Meldung Lawinenwarndienst",
             "snowheight": 15,
-            "freshSnowHeight": 0,
             "openLiftCount": 0,
             "liftCount": 0
         }, {
@@ -27,7 +25,6 @@ export class AreaService {
             "city": "Pitztal",
             "avalancherisk": "keine Meldung Lawinenwarndienst",
             "snowheight": 128,
-            "freshSnowHeight": 0,
             "openLiftCount": 6,
             "liftCount": 6
         }, {
@@ -35,7 +32,6 @@ export class AreaService {
             "city": "Innsbruck",
             "avalancherisk": "keine Meldung Lawinenwarndienst",
             "snowheight": 10,
-            "freshSnowHeight": 0,
             "openLiftCount": 0,
             "liftCount": 2
         }, {
@@ -43,7 +39,6 @@ export class AreaService {
             "city": "Innsbruck Igls",
             "avalancherisk": "keine Meldung Lawinenwarndienst",
             "snowheight": 0,
-            "freshSnowHeight": 0,
             "openLiftCount": 0,
             "liftCount": 0
         }, {
@@ -51,7 +46,6 @@ export class AreaService {
             "city": "Kühtai",
             "avalancherisk": "II - mäßig Lawinenwarndienst",
             "snowheight": 15,
-            "freshSnowHeight": 0,
             "openLiftCount": 5,
             "liftCount": 12
         }
