@@ -7,6 +7,8 @@ import {AreaService} from "./services/area-service";
 import {StartComponent} from "./components/start.component";
 import {HotelComponent} from "./components/hotel.component";
 import {HotelService} from "./services/hotel-service";
+import {ReportComponent} from "./components/report-component";
+import {ReportService} from "./services/report-service";
 
 @Component({
     selector: 'avalauncher-app',
@@ -17,7 +19,8 @@ import {HotelService} from "./services/hotel-service";
     {path: '/', component: SkiAreasComponent, as: 'Home'},
     {path: '/areas', component: SkiAreasComponent, as: 'Areas'},
     {path: '/areas/:area/hotels', component: HotelComponent, as: 'Hotels'},
-    {path: '/start/:area', component: StartComponent, as: 'Start'}
+    {path: '/start/:area', component: StartComponent, as: 'Start'},
+    {path: '/report', component: ReportComponent, as: 'Report'}
 ])
 export class AppComponent {
     public title:string;
@@ -27,4 +30,11 @@ export class AppComponent {
     };
 }
 
-bootstrap(AppComponent, [ROUTER_PROVIDERS, bind(LocationStrategy).toClass(HashLocationStrategy),HTTP_PROVIDERS, AreaService, HotelService]);
+bootstrap(AppComponent, [
+    ROUTER_PROVIDERS,
+    bind(LocationStrategy).toClass(HashLocationStrategy),
+    HTTP_PROVIDERS,
+    AreaService,
+    HotelService,
+    ReportService
+]);
