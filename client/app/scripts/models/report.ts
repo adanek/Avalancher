@@ -1,10 +1,10 @@
 export class Report {
-    creationDate:String;
-    author:String;
-    assessment:String;
-    snowStructure:String;
-    forecast:String;
+    creationDate:string;
+    author:string;
+    assessment:string;
+    snowStructure:string;
+    forecast:string;
     risk:number;
-    summary:String;
-    info:String;
+    summary:string;
+    info:string;
 }
