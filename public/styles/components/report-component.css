@@ -1,0 +1,22 @@
+.report-component h1{
+    text-align: center;
+}
+
+.report-component section{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: justify;
+}
+
+.report-component section header {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.media-object .media {
+    margin-top: 4em;
+}
+
+.report-component .media-object {
+    width: 10em;
+}

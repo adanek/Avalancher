@@ -12,7 +12,7 @@ import {ReportService} from "../services/report-service";
 export class ReportComponent {
 
     public title: string = "Aktuelle Lawinenlage";
-    public date: string = '';
+    public reportDate:Date = new Date();
     public report:Report = {
         risk: 0,
         creationDate: '',
@@ -27,9 +27,9 @@ export class ReportComponent {
     constructor(private reportService:ReportService, private location:Location){
 
         reportService.getReport()
-            .then(data => {
+            .then((data:Report) => {
                 this.report = data;
-                this.date = new Date(data.creationDate);
+                this.reportDate = new Date(data.creationDate);
             })
             .catch(()=> console.error("Couldn't receive avalanche report"));
     }
@@ -62,12 +62,5 @@ export class ReportComponent {
         }
 
         return src;
-    }
-
-    public getDate(datestring:String){
-
-        var date:Date = new Date(datestring);
-
-        return date.toString;
     }
 }

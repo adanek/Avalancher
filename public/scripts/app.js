@@ -15,6 +15,8 @@ var area_service_1 = require("./services/area-service");
 var start_component_1 = require("./components/start.component");
 var hotel_component_1 = require("./components/hotel.component");
 var hotel_service_1 = require("./services/hotel-service");
+var report_component_1 = require("./components/report-component");
+var report_service_1 = require("./services/report-service");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Welcome to Avalauncher";
@@ -30,12 +32,20 @@ var AppComponent = (function () {
             { path: '/', component: ski_areas_component_1.SkiAreasComponent, as: 'Home' },
             { path: '/areas', component: ski_areas_component_1.SkiAreasComponent, as: 'Areas' },
             { path: '/areas/:area/hotels', component: hotel_component_1.HotelComponent, as: 'Hotels' },
-            { path: '/start/:area', component: start_component_1.StartComponent, as: 'Start' }
+            { path: '/start/:area', component: start_component_1.StartComponent, as: 'Start' },
+            { path: '/report', component: report_component_1.ReportComponent, as: 'Report' }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 })();
 exports.AppComponent = AppComponent;
-angular2_1.bootstrap(AppComponent, [router_1.ROUTER_PROVIDERS, angular2_1.bind(router_1.LocationStrategy).toClass(router_1.HashLocationStrategy), http_1.HTTP_PROVIDERS, area_service_1.AreaService, hotel_service_1.HotelService]);
+angular2_1.bootstrap(AppComponent, [
+    router_1.ROUTER_PROVIDERS,
+    angular2_1.bind(router_1.LocationStrategy).toClass(router_1.HashLocationStrategy),
+    http_1.HTTP_PROVIDERS,
+    area_service_1.AreaService,
+    hotel_service_1.HotelService,
+    report_service_1.ReportService
+]);
 //# sourceMappingURL=app.js.map
