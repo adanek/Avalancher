@@ -1,0 +1,33 @@
+<div class="report-component">
+    <h1>Aktuelle Lage vom {{ reportDate |date : 'dd' }}.{{ reportDate |date : 'MM' }}.{{ reportDate |date : 'yyyy' }}&nbsp;{{ reportDate |date : 'HH:mm' }}</h1>
+    <section>
+
+        <div class="media" >
+            <div class="media-left">
+                <img class="media-object" [src]="getAvalancheRiskIcon(report.risk)" alt="Warnstufenicon">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{ report.summary }}</h4>
+                <p>{{report.info}}</p>
+                <p>Autor: {{report.author}}</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section>
+        <header>Beurteilung der Lawinengefahr</header>
+        {{ report.assessment }}
+    </section>
+
+    <section>
+        <header>Schneedeckenaufbau</header>
+        {{ report.snowStructure }}
+    </section>
+
+    <section>
+        <header>Alpinwetterbericht der ZAMG-Wetterdienststelle Innsbruck</header>
+        {{ report.forecast }}
+    </section>
+</div>
