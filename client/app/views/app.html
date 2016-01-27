@@ -1,13 +1,10 @@
-<header class="page-header text-center">
-    <h1>{{title}}</h1>
-</header>
-
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-light bg-faded">
+    <h1 class="navbar-brand" href="#"> Avalauncher</h1>
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li><a [router-link]="['/Home']">Home</a></li>
-            <li><a [router-link]="['/Report']">Lawinenlagebericht</a></li>
-            <li><a [router-link]="['/Areas']">Schigebiete</a></li>
+            <li class="nav-item"><a class="nav-link" [router-link]="['/Home']">Home</a></li>
+            <li class="nav-item"><a class="nav-link" [router-link]="['/Report']">Lawinenlagebericht</a></li>
+            <li class="nav-item"><a class="nav-link" [router-link]="['/Areas']">Schigebiete</a></li>
         </ul>
     </div>
 
@@ -17,7 +14,7 @@
     <router-outlet></router-outlet>
 </main>
 
-<footer class="text-center">
-<p><span class="glyphicon glyphicon-education"></span> Brought to you by Team DWD-R</p>
+<footer class="text-xs-center">
+<p><span class="glyphicon glyphicon-education"></span> Brought to you by <em>Team DWD-R</em></p>
 </footer>
 
