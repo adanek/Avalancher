@@ -93,6 +93,7 @@
     max-width: 850px;
     margin: 1em auto;
     background: whitesmoke;
+    box-shadow: 0 0 10px grey;
 }
 
 .hotel-img {
