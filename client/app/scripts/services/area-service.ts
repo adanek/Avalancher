@@ -14,6 +14,13 @@ export class AreaService {
             "openLiftCount": 20,
             "liftCount": 58
         }, {
+            "name": "Innsbruck-Igls Patscherkofel",
+            "city": "Innsbruck Igls",
+            "avalancherisk": "keine Meldung Lawinenwarndienst",
+            "snowheight": 0,
+            "openLiftCount": 0,
+            "liftCount": 0
+        }, {
             "name": "Glungezer",
             "city": "Tulfes",
             "avalancherisk": "keine Meldung Lawinenwarndienst",
@@ -34,13 +41,6 @@ export class AreaService {
             "snowheight": 10,
             "openLiftCount": 0,
             "liftCount": 2
-        }, {
-            "name": "Innsbruck-Igls Patscherkofel",
-            "city": "Innsbruck Igls",
-            "avalancherisk": "keine Meldung Lawinenwarndienst",
-            "snowheight": 0,
-            "openLiftCount": 0,
-            "liftCount": 0
         }, {
             "name": "Kühtai",
             "city": "Kühtai",
