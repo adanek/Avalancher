@@ -236,3 +236,7 @@ h2 {
         float: none;
     }
 }
+
+small {
+    color: #888888;
+}

@@ -11,30 +11,33 @@
                         <small>Ort:&nbsp;{{area.city}}</small>
                     </h4>
                 </div>
-                <div class="card-img avalanche-risk-icon">
-                    <img class="" [src]="getAvalancheRiskIcon(area.avalancherisk)"
-                         alt="Logo des Schi Gebiets">
-                </div>
 
-                <div class="card-block text-center">
+                <div class="card-content">
+                    <div class="card-img avalanche-risk-icon">
+                        <img class="" [src]="getAvalancheRiskIcon(area.avalancherisk)"
+                             alt="Logo des Schi Gebiets">
+                    </div>
+
+                    <div class="card-block text-center">
 
 
-                    <table class="table">
-                        <tr>
-                            <td>Schneehöhe</td>
-                            <td> {{area.snowheight}}cm</td>
-                        </tr>
-                        <tr>
-                            <td>Warnstufe</td>
-                            <td class="">{{ area.avalancherisk.replace('Lawinenwarndienst', '') }}</td>
-                        </tr>
-                        <tr>
-                            <td>Offene Lifte</td>
-                            <td> {{area.openLiftCount}} von {{area.liftCount}}</td>
-                        </tr>
-                    </table>
+                        <table class="table">
+                            <tr>
+                                <td>Schneehöhe</td>
+                                <td> {{area.snowheight}}cm</td>
+                            </tr>
+                            <tr>
+                                <td>Warnstufe</td>
+                                <td class="">{{ area.avalancherisk.replace('Lawinenwarndienst', '') }}</td>
+                            </tr>
+                            <tr>
+                                <td>Offene Lifte</td>
+                                <td> {{area.openLiftCount}} von {{area.liftCount}}</td>
+                            </tr>
+                        </table>
 
-                    <a class="btn btn-primary-outline" [router-link]="['/Hotels', {'area': area.city}]">Hotels</a>
+                        <a class="btn btn-primary-outline" [router-link]="['/Hotels', {'area': area.city}]">Hotels</a>
+                    </div>
                 </div>
             </div>
         </div>
