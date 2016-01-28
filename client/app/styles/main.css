@@ -1,8 +1,22 @@
 @import "components/report-component.css";
 
+.nav-menu {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.nav-menu-item {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+.nav-menu-item a {
+    color: #777777;
+}
+
 .heroes {
     list-style: none;
-    margin-left:1em;
+    margin-left: 1em;
     padding: 0;
     width: 10em;
 }
@@ -10,7 +24,7 @@
 .heroes li {
     cursor: pointer;
     position: relative;
-    left:0;
+    left: 0;
     transition: all 0.2s ease;
 }
 
@@ -23,13 +37,14 @@
 .heroes .badge {
     font-size: small;
     color: white;
-    padding:0.1em 0.7em;
+    padding: 0.1em 0.7em;
     background-color: #369;
     line-height: 1em;
     position: relative;
     left: -1px;
     top: -1px;
 }
+
 .selected {
     background-color: #EEE;
     color: #369;
@@ -48,25 +63,65 @@
 }
 
 .avalanche-risk-icon {
-max-width: 6em;
+    max-width: 6em;
     margin: 0 auto;
 }
 
 .avalanche-risk-icon img {
     height: 6em;
-    margin:  1em 0 0 0;
+    margin: 1em 0 0 0;
 }
-
 
 .card {
     max-width: 380px;
     margin: 1em auto;
 }
+
 .card table {
     font-size: 0.8em;
 }
 
+.hotel-list {
+    margin-top: 2em;
+}
 
+.hotel {
+    border: 1px solid lightgray;
+    border-radius: 0.25em;
+    padding: 1em;
+    max-width: 850px;
+    margin: 1em auto;
+}
+
+.hotel-img {
+    overflow: hidden;
+
+
+}
+
+.hotel img {
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto 1em;
+}
+
+@media screen and (min-width: 990px) {
+    .hotel img {
+        max-width: 200px;
+    }
+}
+
+.hotel p span {
+    float: right;
+}
+
+@media screen and (max-width: 770px ){
+    .hotel p span {
+        float: none;
+        display: block;
+    }
+
+}
 
 .startup-outer {
     position: relative;
@@ -95,8 +150,9 @@ max-width: 6em;
 
 }
 
-.navbar-brand {
+.brand {
     font-family: 'Nothing You Could Do', cursive;
+    text-align: center;
 }
 
 body footer {
