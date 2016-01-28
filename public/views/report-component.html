@@ -1,18 +1,22 @@
 <div class="report-component">
-    <h1>Aktuelle Lage vom {{ reportDate |date : 'dd' }}.{{ reportDate |date : 'MM' }}.{{ reportDate |date : 'yyyy' }}&nbsp;{{ reportDate |date : 'HH:mm' }}</h1>
-    <section>
+    <h2 class="text-xs-center">Aktuelle Lage vom {{ reportDate |date : 'dd' }}.{{ reportDate |date : 'MM' }}.
+        {{reportDate |date : 'yyyy' }} &nbsp;{{ reportDate |date : 'HH:mm' }}</h2>
+    <section class="alert alert-warning">
 
-        <div class="media" >
-            <div class="media-left">
-                <img class="media-object" [src]="getAvalancheRiskIcon(report.risk)" alt="Warnstufenicon">
+
+        <div class="report-info clearfix">
+            <div class="risk-icon clearfix">
+                <img class="" [src]="getAvalancheRiskIcon(report.risk)" alt="Warnstufenicon">
             </div>
-            <div class="media-body">
-                <h4 class="media-heading">{{ report.summary }}</h4>
-                <p>{{report.info}}</p>
-                <p>Autor: {{report.author}}</p>
+
+            <div class="report-info-detail">
+                <p class=""><strong>{{ report.summary }}</strong></p>
+                <p>
+                    {{report.info}} <br>
+                    Autor:&nbsp;{{report.author.replace(' ', '&nbsp;')}}&nbsp;-&nbsp;<a href="https://lawine.tirol.gv.at" target="_blank">Lawinenwarndienst&nbsp;Tirol</a>
+                </p>
             </div>
         </div>
-
     </section>
 
 
