@@ -15,6 +15,7 @@ var HotelComponent = (function () {
         var _this = this;
         this.params = params;
         this.hotelService = hotelService;
+        this.hotels = [];
         this.area = params.get('area');
         hotelService.getHotelsFormArea(this.area).then(function (receivedHotels) { return _this.hotels = receivedHotels; });
     }

@@ -11,7 +11,7 @@ import {Hotel} from "../models/hotel";
 export class HotelComponent{
 
 
-    public hotels: Hotel[];
+    public hotels: Hotel[] = [];
 
     public area: string;
     constructor(private params:RouteParams, private hotelService: HotelService){

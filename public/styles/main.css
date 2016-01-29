@@ -242,3 +242,27 @@ h2 {
 small {
     color: #888888;
 }
+
+.loading-outer {
+    position: relative;
+    text-align: center;
+}
+
+.loading-outer:before {
+    content: '';
+    display: inline-block;
+    height: 80%;
+    vertical-align: middle;
+}
+
+.loading-inner {
+    display: inline-block;
+    width: 75%;
+    padding: 2em;
+    vertical-align: middle;
+}
+
+.loading-inner img {
+    max-width: 100%;
+
+}

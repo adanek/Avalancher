@@ -66,6 +66,7 @@ export class AreaService {
                     else if (response.status === 404) {
                         console.info('AreaService: Fail to load data form server. Serving demo data');
                         resolve(this.demoAreas);
+                        //reject("No data");
                     }
                     else {
                         reject(response);
