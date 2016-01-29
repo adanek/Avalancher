@@ -57,7 +57,6 @@ public class RiskController extends Controller {
 			
 			for(Node node : nodes){
 				report.creationDate = node.getStringValue();
-				System.out.println(report.creationDate);
 				break;
 			}
 
@@ -65,7 +64,6 @@ public class RiskController extends Controller {
 			
 			for(Node node : nodes){
 				report.author = node.getStringValue();
-				System.out.println(report.author);
 				break;
 			}
 			
@@ -73,7 +71,6 @@ public class RiskController extends Controller {
 			
 			for(Node node : nodes){
 				report.snowStructure = node.getStringValue();
-				System.out.println(report.snowStructure);
 				break;
 			}
 			
@@ -81,7 +78,6 @@ public class RiskController extends Controller {
 			
 			for(Node node : nodes){
 				report.assessment = node.getStringValue();
-				System.out.println(report.assessment);
 				break;
 			}
 			
@@ -89,7 +85,6 @@ public class RiskController extends Controller {
 			
 			for(Node node : nodes){
 				report.forecast = node.getStringValue();
-				System.out.println(report.forecast);
 				break;
 			}
 			
@@ -97,7 +92,6 @@ public class RiskController extends Controller {
 			
 			for(Node node : nodes){
 				report.info = node.getStringValue();
-				System.out.println(report.info);
 				break;
 			}
 			
@@ -105,7 +99,6 @@ public class RiskController extends Controller {
 			
 			for(Node node : nodes){
 				report.summary = node.getStringValue();
-				System.out.println(report.summary);
 				break;
 			}
 			
@@ -113,7 +106,6 @@ public class RiskController extends Controller {
 			
 			for(Node node : nodes){
 				report.risk = Integer.valueOf(node.getStringValue());
-				System.out.println(report.risk);
 				break;
 			}
 			
