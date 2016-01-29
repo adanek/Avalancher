@@ -34,7 +34,8 @@ public class HotelService implements Callable<JsonNode> {
 		boolean flag = false;
 		List<HotelInfo> hotels = new ArrayList<>();
 		BufferedReader reader = null;
-		while(flag == false){
+		int count = 0;
+		while(flag == false && count < 5){
 			try {
 				flag = true;
 				hotels.clear();
@@ -74,24 +75,24 @@ public class HotelService implements Callable<JsonNode> {
 
 					if(hotel.image != null){
 						if(hotel.image.contains("static/img/transparent")){ 
-							System.out.println(hotel.image);
-							System.out.println("continue");
+							hotel.image = null;
 							flag = false;
-							break;
 						}
 					}
 					hotels.add(hotel);
 				}
+				count++;
 
 			} catch (Exception ex) {
-
+				ex.printStackTrace();
+				count++;
 				System.out.println(ex);
 				flag = false;
 			} finally {
 				reader.close();
 			}
 		}
-
+		System.out.println("count:" + count);
 		JsonNode responseData = Json.toJson(hotels);
 		return responseData;
 	}
