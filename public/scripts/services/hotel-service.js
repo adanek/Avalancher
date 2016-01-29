@@ -180,6 +180,7 @@ var HotelService = (function () {
                     }
                     else if (response.status === 404) {
                         console.info("HotelService: Couldn't reach server, serve demoData");
+                        //reject("No data");
                         resolve(_this.demoData);
                     }
                     else {

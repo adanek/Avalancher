@@ -1,18 +1,55 @@
-<div class="area-list">
-    <div class="ski-area media" *ng-for="#area of areas">
-        <div class="media-left">
-            <a href="#">
-                <img class="media-object" src="images/ski-area.png" alt="Logo des Schi Gebiets">
-            </a>
-            <a href="#">
-                <img class="media-object" [src]="getAvalancheRiskIcon(area.avalancherisk)" alt="Logo des Schi Gebiets">
-            </a>
+<div class="area-list container">
+
+    <div class="loading-outer" *ng-if="areas.length == 0">
+        <div class="text-xs-center loading-inner">
+            <img src="images/loading2.gif">
+            <h3 class="text-xs-center">Lade Schigebiete...</h3>
         </div>
-        <div class="media-body">
-            <h4 class="media-heading">{{ area.name }} <small>Ort:&nbsp;{{area.city}}</small></h4>
-            <p>Schneehöhe: {{area.snowheight}}</p>
-            <p>Offene Lifte: {{area.openLiftCount}} von {{area.liftCount}}</p>
-            <a class="btn btn-default" [router-link]="['/Hotels', {'area': area.city}]">Hotels</a>
+    </div>
+
+    <div *ng-if="areas.length > 0">
+        <h2 class="text-xs-center">Schigebiete rund um Innsbruck</h2>
+
+        <div class="row">
+            <div class="card-wrapper col-sm-12 col-md-6 col-lg-4" *ng-for="#area of areas">
+                <div class="card text-xs-center">
+
+                    <div class="card-block">
+                        <h4 class="card-title ">{{ area.name }}<br>
+                            <small>Ort:&nbsp;{{area.city}}</small>
+                        </h4>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="card-img avalanche-risk-icon">
+                            <img class="" [src]="getAvalancheRiskIcon(area.avalancherisk)"
+                                 alt="Logo des Schi Gebiets">
+                        </div>
+
+                        <div class="card-block text-center">
+
+
+                            <table class="table">
+                                <tr>
+                                    <td>Schneehöhe</td>
+                                    <td> {{area.snowheight}}cm</td>
+                                </tr>
+                                <tr>
+                                    <td>Warnstufe</td>
+                                    <td class="">{{ area.avalancherisk.replace('Lawinenwarndienst', '') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Offene Lifte</td>
+                                    <td> {{area.openLiftCount}} von {{area.liftCount}}</td>
+                                </tr>
+                            </table>
+
+                            <a class="btn btn-primary-outline"
+                               [router-link]="['/Hotels', {'area': area.city}]">Hotels</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

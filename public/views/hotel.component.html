@@ -1,20 +1,34 @@
-<section class="hotel-list">
-    <header class="h2 text-center">Hotels nahe dem Schigebiet {{ area }}</header>
+<section class="hotel-list container">
 
-    <div class="hotel-list">
-        <div class="hotel media" *ng-for="#hotel of hotels">
-            <div class="media-left">
-                <a [href]="hotel.url"><img [src]="getImageSrc(hotel)" class="media-object hotel-image"></a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">
-                    <span>{{ hotel.name }}</span> <br>
-                    <small>{{ hotel.location }}</small>
-                </h4>
-                <p>{{ hotel.description }}</p>
-                <p>Sterne: {{ hotel.stars }}</p>
-                <p>Bewertung: {{ hotel.ratingDescription }} ({{ hotel.rating }})</p>
-                <a class="btn btn-default" target="_blank"  [href]="hotel.url">Zu den Angeboten</a>
+    <div class="loading-outer" *ng-if="hotels.length == 0">
+        <div class="text-xs-center loading-inner">
+            <img src="images/loading2.gif">
+            <h3 class="text-xs-center">Suche Hotels nahe {{ area }}...</h3>
+        </div>
+    </div>
+
+    <div *ng-if="hotels.length > 0">
+        <h2 class="text-xs-center">Hotels nahe dem Schigebiet {{ area }}</h2>
+
+        <div class="hotel-list">
+            <div class="hotel container" *ng-for="#hotel of hotels">
+                <div class="hotel-img col-xs-12 col-sm-5 col-sm-offset-0 col-md-4">
+                    <a [href]="hotel.url" target="_blank"><img [src]="getImageSrc(hotel)"
+                                                               class="media-object hotel-image"></a>
+                </div>
+                <div class="col-xs-12 col-sm-7 col-md-8">
+                    <h4 class="media-heading">
+                        <span>{{ hotel.name }}</span> <br>
+                        <small>{{ hotel.location }}</small>
+                    </h4>
+                    <p>Sterne: {{ hotel.stars }}</p>
+                    <p>{{ hotel.description }}</p>
+                    <p>
+                        Bewertung: {{ hotel.ratingDescription }} ({{ hotel.rating }})
+                        <span><a class="card-link" target="_blank" [href]="hotel.url">Zu den Angeboten</a></span>
+                    </p>
+
+                </div>
             </div>
         </div>
     </div>
