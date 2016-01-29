@@ -8,7 +8,16 @@ import play.mvc.Controller;
 import play.mvc.Result;
 
 import javax.inject.Inject;
+
+import java.util.*;
+import org.dom4j.*;
+import org.dom4j.io.SAXReader;
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.concurrent.Callable;
 
 /**
@@ -21,6 +30,32 @@ public class RiskController extends Controller {
 
     // get snow risk report
     public Result getRiskReport() throws IOException {
+    	
+    	URL url = new URL("https://apps.tirol.gv.at/lwd/produkte/LLBTirol.xml");
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		connection.setRequestMethod("GET");
+		connection.setDoInput(true);
+		connection.setDoOutput(false);
+		connection.setUseCaches(false);
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(
+				connection.getInputStream()));
+
+		String xmlText = "";
+		for (String line; (line = reader.readLine()) != null;) {
+			xmlText = xmlText + line;
+		}
+		
+		SAXReader saxreader = new SAXReader();
+		Document document;
+		try {
+			document = saxreader.read(xmlText);
+			List<Node> nodes = document.selectNodes("caaml:Bulletin" );
+			System.out.println(nodes.get(0).toString());
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
         // Link https://apps.tirol.gv.at/lwd/produkte/LLBTirol.xml
         RiskReport report = new RiskReport();
