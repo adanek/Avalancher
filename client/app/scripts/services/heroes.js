@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var angular2_1 = require('angular2/angular2');
+var core_1 = require('angular2/core');
 var http_1 = require('angular2/http');
 var hero_1 = require('../models/hero');
 var HeroService = (function () {
@@ -31,24 +31,13 @@ var HeroService = (function () {
         return this.heroes;
     };
     HeroService.prototype.getData = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.get('api/data').subscribe(function (response) {
-                if (response.status === 200) {
-                    resolve(response.json);
-                }
-                else {
-                    reject(response);
-                }
-            }, function (err) { return console.log(err); }, function () { return console.log('Request complete'); });
-        });
     };
     ;
     HeroService.prototype.addHero = function (hero) {
         this.heroes.push(hero);
     };
     HeroService = __decorate([
-        angular2_1.Injectable(), 
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
     ], HeroService);
     return HeroService;

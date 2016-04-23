@@ -1,4 +1,6 @@
-import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES, bind} from 'angular2/angular2';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
+import {Component, bind} from 'angular2/core';
+import {bootstrap} from "angular2/bootstrap";
 import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig, RouterOutlet, RouterLink, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 

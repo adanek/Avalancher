@@ -1,4 +1,5 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, Input} from 'angular2/core';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 import {RouteParams} from 'angular2/router';
 import {HotelService} from "../services/hotel-service";
 import {Hotel} from "../models/hotel";

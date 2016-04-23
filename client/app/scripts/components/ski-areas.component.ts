@@ -1,4 +1,5 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/core';
+import {CORE_DIRECTIVES} from 'angular2/common';
 import {Location, RouterLink} from 'angular2/router';
 import {AreaService} from "../services/area-service";
 import {SkiArea} from "../models/ski-area";
@@ -52,6 +53,16 @@ export class SkiAreasComponent {
         }
 
         return src;
+    }
+
+    public getRisk(area:SkiArea){
+
+        if(area && area.avalancherisk){
+            return area.avalancherisk.replace('Lawinenwarndienst', '');
+        }
+        else {
+            return "-";
+        }
     }
 
     public gotoHotels(area:SkiArea){

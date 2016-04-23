@@ -1,4 +1,4 @@
-import{Injectable} from 'angular2/angular2';
+import{Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
 import {Hero} from '../models/hero';
 
@@ -30,20 +30,6 @@ export class HeroService {
     }
 
     public getData() {
-
-        return new Promise<Hero>((resolve, reject) => {
-            this.http.get('api/data').subscribe(
-                response => {
-                    if (response.status === 200) {
-                        resolve(response.json);
-                    }
-                    else {
-                        reject(response);
-                    }
-                },
-                err => console.log(err),
-                ()=> console.log('Request complete'));
-        });
     };
 
     public addHero(hero:Hero) {

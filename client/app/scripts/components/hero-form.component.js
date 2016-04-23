@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var angular2_1 = require('angular2/angular2');
+var core_1 = require('angular2/core');
+var common_1 = require('angular2/common');
 var hero_1 = require('../models/hero');
 var HeroFormComponent = (function () {
     function HeroFormComponent() {
@@ -23,15 +24,15 @@ var HeroFormComponent = (function () {
         configurable: true
     });
     __decorate([
-        angular2_1.Input('hero'), 
+        core_1.Input('hero'), 
         __metadata('design:type', hero_1.Hero)
     ], HeroFormComponent.prototype, "hero", void 0);
     HeroFormComponent = __decorate([
-        angular2_1.Component({
+        core_1.Component({
             selector: 'hero-form',
             inputs: ['[(hero)]'],
             templateUrl: 'views/hero-form.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
+            directives: [common_1.CORE_DIRECTIVES, common_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], HeroFormComponent);

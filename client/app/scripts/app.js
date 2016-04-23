@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var angular2_1 = require('angular2/angular2');
+var core_1 = require('angular2/core');
+var bootstrap_1 = require("angular2/bootstrap");
 var router_1 = require('angular2/router');
 var http_1 = require('angular2/http');
 var ski_areas_component_1 = require("./components/ski-areas.component");
@@ -23,7 +24,7 @@ var AppComponent = (function () {
     }
     ;
     AppComponent = __decorate([
-        angular2_1.Component({
+        core_1.Component({
             selector: 'avalauncher-app',
             templateUrl: "views/app.html",
             directives: [router_1.RouterOutlet, router_1.RouterLink]
@@ -40,9 +41,9 @@ var AppComponent = (function () {
     return AppComponent;
 })();
 exports.AppComponent = AppComponent;
-angular2_1.bootstrap(AppComponent, [
+bootstrap_1.bootstrap(AppComponent, [
     router_1.ROUTER_PROVIDERS,
-    angular2_1.bind(router_1.LocationStrategy).toClass(router_1.HashLocationStrategy),
+    core_1.bind(router_1.LocationStrategy).toClass(router_1.HashLocationStrategy),
     http_1.HTTP_PROVIDERS,
     area_service_1.AreaService,
     hotel_service_1.HotelService,
